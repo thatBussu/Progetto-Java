@@ -1,7 +1,7 @@
 # Progetto-Java
 Tentativo di creazione di una chat room con più utenti
 ****************************
-CREDITS                                                                                              
+CREDITS:
 * Banni Daniele,                       
 * Bussu Manuel,                         
 * Diaferia Emanuele,                   
