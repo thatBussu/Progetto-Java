@@ -7,7 +7,7 @@ import java.net.Socket;
 import java.util.Vector;
 
 /**
- * La classe Server avvia un Server in grado di accettare più connessioni e di stampare i messaggi ricevuti dai diversi Client
+ * La classe Server avvia un Server in grado di accettare piÃ¹ connessioni e di stampare i messaggi ricevuti dai diversi Client
  * @author Banni Daniele, Bussu Manuel, Diaferia Emanuele, Nappa Camilla
  * @version 1.0
  */
@@ -19,7 +19,7 @@ public class Server {
         	System.out.println("In attesa di connessioni...");
         	//creazione di un oggetto ServerSocket attraverso il costruttore che prevede l'inserimento di una porta sulla quale comunicare
         	ServerSocket ss = new ServerSocket(45);
-        	//creazione di un vettore di Socket per poter gestire più connessioni
+        	//creazione di un vettore di Socket per poter gestire piÃ¹ connessioni
         	Vector<Socket> s = new Vector<Socket>();
         	//creazione di un vettore di Stringhe dove poter inserire gli nickname dei diversi Client
         	Vector<String> nome = new Vector<String>();
@@ -29,24 +29,24 @@ public class Server {
         	String a;
         	//dichiarazione e inizializzazione del contatore
         	int c = 0;
-        	//ciclo che si ripete nel caso in cui si volessero accettare più connessioni, con il conseguente inserimento dei nickname
+        	//ciclo che si ripete nel caso in cui si volessero accettare piÃ¹ connessioni, con il conseguente inserimento dei nickname
             do {
-            		//inserimento di più connessioni all'interno del vettore
+            		//inserimento di piÃ¹ connessioni all'interno del vettore
             		s.addElement(ss.accept());
             		//creazione di un oggetto BufferedReader in grado di prendere l'input dal flusso di dati del Socket
             		BufferedReader br = new BufferedReader(new InputStreamReader(s.elementAt(c).getInputStream()));
             		//Inserimento di un nickname all'interno del vettore di stringhe
                     nome.addElement(br.readLine());
                     //notifica di sistema in cui si avverte della connessione di un Client
-                    System.out.println(nome.elementAt(c) + " si è connesso.");
-                    //notifica di sistema per poter accettare più connessioni
+                    System.out.println(nome.elementAt(c) + " si Ã¨ connesso.");
+                    //notifica di sistema per poter accettare piÃ¹ connessioni
             		System.out.print("Si vuole accettare un'altra connessione? S/N: ");
             		//inserimento della conferma
             		a = bl.readLine();
             		//incremento del contatore
             		c++;
             		
-            	} while ( a.equals("S") || a.equals("s"));
+            	} while ( a.equals("S") || a.equals("s") );
             	//spazio
                 System.out.println();
                 //ciclo infinito in cui si stampano i messaggi ricevuti dai Client
