@@ -28,9 +28,7 @@ public class Client {
             //ciclo infinito per continuare a mandare messaggi al server
             while(true) {
             out.println(br.readLine());
-
             }
-
         }
         catch (IOException e) {
             e.printStackTrace();
